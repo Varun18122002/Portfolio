@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { ReactDOM } from 'react'
-import { About, Contact, Experience, Navbar, Tech, Works } from './components'
+// import { About, Contact, Experience, Navbar, Tech, Works } from './components'
+import {About , Contact , Experience , Navbar , Tech , Works } from './components'
 import Blogs from './components/Blogs'
 import { BrowserRouter } from 'react-router-dom'
 import Video from './components/Video'
@@ -42,8 +43,6 @@ const App = () => {
               <Brain scrollYProgress={scrollYProgress} />
             </div>
           </div>
-
-
           <Tech />
           <Works />
           <Blogs />

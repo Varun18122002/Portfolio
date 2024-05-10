@@ -6,6 +6,7 @@ import { EarthCanvas } from './canvas';
 import { SectionWrapper } from '../hoc';
 import { slideIn } from '../utils/motion';
 import MsgCard from './MsgCard';
+import resume from './../assets/Resume.pdf'
 
 const Contact = () => {
   const text = "Say Hello!!";
@@ -28,7 +29,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-  
+
     if (!form.email || !/\S+@\S+\.\S+/.test(form.email)) {
       setModalTitle("Error!");
       setModalMessage("Please provide a valid email address.");
@@ -36,7 +37,7 @@ const Contact = () => {
       setLoading(false);
       return;
     }
-  
+
     emailjs
       .send(
         'service_6ebqdyl',
@@ -57,7 +58,7 @@ const Contact = () => {
           setModalMessage("Thank you for contacting. I will get back to you as soon as possible.");
           setShowModal(true);
           setForm({ name: "", email: "", message: "" });
-          
+
         },
         (error) => {
           setLoading(false);
@@ -87,17 +88,26 @@ const Contact = () => {
         <form ref={formRef} onSubmit={handleSubmit} className='mt-12 flex flex-col gap-8'>
           <label className="flex flex-col">
             <span className='text-white font-medium mb-4'>Your Name </span>
-            <input type='text' name='name' value={form.name} onChange={handleChange} placeholder='What is your name?' className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium' />
+            <span className='w-full green-pink-gradient p-[1px] shadow-card rounded-lg'>
+              <input type='text' name='name' value={form.name} onChange={handleChange} placeholder='What is your good name?' className='bg-black  h-12 w-full px-6 py-4 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium' />
+            </span>
           </label>
-          <label className="flex flex-col">
-            <span className='text-white font-medium mb-4'>Your Email </span>
-            <input type='email' name='email' value={form.email} onChange={handleChange} placeholder='What is your email?' className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium' />
+          <label className="flex  flex-col">
+            <span className='text-white  font-medium mb-4'>Your Email </span>
+            <span className='w-full green-pink-gradient p-[1px] shadow-card rounded-lg'>
+              <input type='email' name='email' value={form.email} onChange={handleChange} placeholder='What is your email?' className='bg-black  h-12 w-full px-6 py-4 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium' />
+            </span>
           </label>
           <label className="flex flex-col">
             <span className='text-white font-medium mb-4'>Your Message</span>
-            <textarea type='text' name='message' value={form.message} onChange={handleChange} placeholder='What do you want to say?' className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium' />
+            <span className='w-full green-pink-gradient p-[1px] shadow-card rounded-lg'>
+              <textarea type='text' name='message' value={form.message} onChange={handleChange} placeholder='What is you like to say?' className='bg-black w-full px-6 py-4 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium' />
+            </span>
           </label>
-          <div className="flex justify-end">
+          <div className="flex justify-between">
+            <a href={resume} download className='bg-tertiary  py-3 px-8 mt-3 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl'>
+              My Resume
+            </a>
             <button type='submit' className='bg-tertiary py-3 px-8 mt-3 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl' disabled={loading}>
               {loading ? 'Sending...' : 'Send'}
             </button>

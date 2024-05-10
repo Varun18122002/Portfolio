@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { styles } from '../styles';
-import { textVariant } from '../utils/motion';
 
 const MsgCard = ({ onClose, title, message }) => {
   return (

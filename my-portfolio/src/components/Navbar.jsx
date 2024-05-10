@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { styles } from '../styles';
-import { navLinks } from '../constants';
-import { logo, menu, close, linked, github } from '../assets'; // Import LinkedIn and GitHub images
+import { navLinks } from '../../src/constants';
+import { menu, close, linked, github } from '../../src/assets'; // Import LinkedIn and GitHub images
 import { AnimatePresence, delay, motion, stagger } from 'framer-motion';
 
 const Navbar = () => {

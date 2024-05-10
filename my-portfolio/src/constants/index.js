@@ -1,7 +1,7 @@
 
 import {
   mobile,black,
-    backend,deep2,kavach,karunya,medium,linked,
+    backend,deep2,kavach,karunya,medium,linked,hydra,
     web,
     javascript,social,deep,tn,
     tensor,
@@ -259,6 +259,27 @@ import {
       ],
       image: deep,
       source_code_link: "https://github.com/",
+    },
+    {
+      name: "Hydra net",
+      description:
+        "Model Developed for Segmentation and depth.",
+      tags: [
+        {
+          name: "Deep Learning",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "python",
+          color: "green-text-gradient",
+        },
+        {
+          name: "Pytorch",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: hydra,
+      source_code_link: "https://github.com/Varun18122002/Hydranet",
     },
   ];
   

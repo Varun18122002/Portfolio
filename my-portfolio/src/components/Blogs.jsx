@@ -1,12 +1,11 @@
 import React from 'react'
 import { Tilt } from 'react-tilt'
 import {motion} from 'framer-motion'
-import {styles} from '../styles'
-import { medium } from '../assets'
+import { styles } from '../styles'
+import { medium } from '../../src/assets'
 import { SectionWrapper } from '../hoc'
-import { blogs } from '../constants'
+import { blogs } from '../../src/constants'
 import { fadeIn, textVariant } from '../utils/motion'
-import Slider from 'react-slick'
 
 
 const BlogsCard = ({

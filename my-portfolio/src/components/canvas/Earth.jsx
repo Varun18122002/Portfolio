@@ -1,11 +1,11 @@
-
+"use client"
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
 const Earth = () => {
-  const earth = useGLTF("src/components/canvas/planet/scene.gltf");
+  const earth = useGLTF("/planet/scene_earth.gltf");
   return (
     <mesh >
       <primitive

@@ -1,18 +1,18 @@
+"use client"
 import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
-
 import CanvasLoader from "../Loader";
 
-const Computers = ({ isMobile }) => {
-  const computer = useGLTF("src/components/canvas/gaming_desktop_pc/scene.gltf");
 
-  
+const Computers = ({ isMobile }) => {
+  const computer = useGLTF("/gaming_desktop_pc/scene_computer.gltf");
+
 
   return (
     <mesh >
       <hemisphereLight intensity={0.40}
-        groundColor="black" />
+        groundColor="white" />
       <pointLight intensity={1} />
       <spotLight
         position={[-20, 50, 10]}
@@ -25,7 +25,7 @@ const Computers = ({ isMobile }) => {
       <primitive
         object={computer.scene}
         scale={isMobile ? [0.9, 0.9, 0.9] : [1.5, 1.5, 1.5]}
-        position={isMobile ? [0,-3.25, -1.5] : [0, -3.25, -1.5]}
+        position={[0, -3.25, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
